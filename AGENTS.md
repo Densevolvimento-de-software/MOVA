@@ -2,6 +2,15 @@
 
 Estas regras se aplicam a todo trabalho neste repositório.
 
+## Entendimento do pedido
+
+Antes de implementar, confirme que o objetivo, o escopo e o resultado esperado estão claros. Consulte o código e a documentação existentes para obter contexto.
+
+- Se o pedido estiver claro, siga diretamente com a implementação.
+- Se houver uma dúvida que possa alterar o resultado ou uma regra de negócio, faça perguntas objetivas antes de decidir.
+- Em trabalhos maiores, identifique o menor resultado testável e organize a entrega em incrementos.
+- Não invente regras de negócio. Registre suposições relevantes e envolva o responsável nas decisões que exigirem validação.
+
 ## Antes de alterar
 
 - Leia a issue, seus critérios de aceitação e os cenários de validação.
