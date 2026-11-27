@@ -1,0 +1,7 @@
+# Worktrees locais
+.worktrees/
+
+# Arquivos de ambiente locais
+.env
+.env.*
+!.env.example
