@@ -1,0 +1,65 @@
+name: Bug
+description: Relatar comportamento incorreto ou falha
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Descreva o menor resultado observável que permite reproduzir e conferir a correção. A conferência de clareza é obrigatória, mesmo em pedidos simples. Pedidos claros e reversíveis podem seguir sem especificação; pedidos grandes, divididos em fatias ou difíceis de reverter precisam de Spec Writer. Registre lacunas sem presumir regras de negócio. Não inclua senhas, tokens ou dados pessoais/de clientes.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: O que precisa ser feito?
+      description: Descreva o comportamento incorreto e os passos para reproduzi-lo.
+      placeholder: Informe o que aconteceu e como repetir o problema.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Por que isso é necessário?
+      description: Explique o impacto do problema e quem é afetado.
+      placeholder: Descreva o impacto observado.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Resultado esperado
+      description: Descreva o comportamento correto e observável após a correção.
+      placeholder: Informe o que deveria acontecer.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-scenarios
+    attributes:
+      label: Cenários de aceitação
+      description: Registre passos reproduzíveis e o resultado esperado, começando pelo menor cenário que confirma a correção.
+      placeholder: |
+        - [ ] Dado que...
+              Quando...
+              Então...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto e referências
+      description: Inclua ambiente, versão, links, imagens ou logs sanitizados. Identifique informações ainda desconhecidas.
+      placeholder: Adicione referências úteis sem incluir dados sensíveis.
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Restrições ou observações
+      description: Registre dependências, limites, riscos e itens fora do escopo; se não houver, informe isso.
+      placeholder: Descreva restrições relevantes ou escreva "Nenhuma conhecida".
+    validations:
+      required: false

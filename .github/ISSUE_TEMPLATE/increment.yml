@@ -1,0 +1,65 @@
+name: Incremento
+description: Propor uma fatia pequena e verificável de uma entrega maior
+title: "[Incremento] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Defina uma fatia pequena que produza resultado observável. A conferência de clareza é obrigatória, mesmo em pedidos simples. Pedidos claros e reversíveis podem seguir sem especificação; pedidos grandes, divididos em fatias ou difíceis de reverter precisam de Spec Writer. Registre lacunas sem presumir regras de negócio. Não inclua senhas, tokens ou dados pessoais/de clientes.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: O que precisa ser feito?
+      description: Descreva a fatia desta entrega, sem ampliar o escopo para a iniciativa inteira.
+      placeholder: Identifique a mudança pequena que será entregue.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Por que isso é necessário?
+      description: Explique como esta fatia contribui para a necessidade maior e quem será beneficiado.
+      placeholder: Informe o problema atendido por este incremento.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Resultado esperado
+      description: Descreva o resultado observável ao concluir somente este incremento.
+      placeholder: Informe o comportamento ou artefato verificável entregue.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-scenarios
+    attributes:
+      label: Cenários de aceitação
+      description: Especifique como conferir o menor resultado testável desta fatia.
+      placeholder: |
+        - [ ] Dado que...
+              Quando...
+              Então...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto e referências
+      description: Inclua issue principal, dependências, milestone, links, regras de negócio validadas ou arquivos relevantes. Identifique informações desconhecidas.
+      placeholder: Adicione referências e dependências conhecidas.
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Restrições ou observações
+      description: Registre limites desta fatia, riscos, dependências e itens fora do escopo; se não houver, informe isso.
+      placeholder: Descreva restrições relevantes ou escreva "Nenhuma conhecida".
+    validations:
+      required: false
