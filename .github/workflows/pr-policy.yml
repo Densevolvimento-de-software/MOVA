@@ -1,0 +1,40 @@
+name: PR policy
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate-description:
+    name: Validate PR description and size
+    runs-on: ubuntu-latest
+    steps:
+      # Executa apenas o validador já integrado; a PR inicial o cobre no job de testes sem token da API.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - name: Validate pull request
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_API_URL: ${{ github.api_url }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: if test -f .github/scripts/validate-pr-policy.mjs; then node .github/scripts/validate-pr-policy.mjs; else echo "Validador será ativado após a integração inicial."; fi
+
+  test-validator:
+    name: Test PR policy validator
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Run validator tests
+        run: node --test .github/scripts/validate-pr-policy.test.mjs
